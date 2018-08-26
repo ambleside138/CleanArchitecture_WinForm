@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B36CFEB-AE41-4DF4-99DD-6AE9ECEEBBA4}</ProjectGuid>
+    <ProjectGuid>{DEB47E3B-B394-4A55-9243-ED18CFB60BAE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain</RootNamespace>
-    <AssemblyName>Domain</AssemblyName>
+    <RootNamespace>UseCase</RootNamespace>
+    <AssemblyName>UseCase</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,28 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\Articles\ArticleCreateInteractor.cs" />
-    <Compile Include="Application\Articles\ArticleGetDetailInteractor.cs" />
-    <Compile Include="Application\Articles\ArticleGetByAutherInteractor.cs" />
-    <Compile Include="Domain\Model\Articles\Article.cs" />
-    <Compile Include="Domain\Model\Articles\ArticleId.cs" />
-    <Compile Include="Domain\Model\Articles\ArticleToDtoTransformer.cs" />
-    <Compile Include="Domain\Model\Articles\IArticleDataTransformer.cs" />
-    <Compile Include="Domain\Model\Articles\IArticleRepository.cs" />
-    <Compile Include="Domain\Model\Users\IUserRepository.cs" />
-    <Compile Include="Domain\Model\Users\User.cs" />
-    <Compile Include="Domain\Model\Users\UserId.cs" />
+    <Compile Include="Articles\Common\ArticleDto.cs" />
+    <Compile Include="Articles\Create\IArticleCreateUseCase.cs" />
+    <Compile Include="Articles\Create\ArticleCreateRequest.cs" />
+    <Compile Include="Articles\Create\ArticleCreateResponse.cs" />
+    <Compile Include="Articles\GetByAuther\ArticleGetByAutherRequest.cs" />
+    <Compile Include="Articles\GetByAuther\ArticleGetByAutherResponse.cs" />
+    <Compile Include="Articles\GetByAuther\IArticleGetByAutherUseCase.cs" />
+    <Compile Include="Articles\GetDetail\ArticleGetDetailRequest.cs" />
+    <Compile Include="Articles\GetDetail\ArticleGetDetailResponse.cs" />
+    <Compile Include="Articles\GetDetail\IArticleGetDetailUseCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\UseCase.Core\UseCase.Core.csproj">
       <Project>{736d5cd7-a127-4d55-ac33-3f1d2a0b3550}</Project>
       <Name>UseCase.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UseCase\UseCase.csproj">
-      <Project>{deb47e3b-b394-4a55-9243-ed18cfb60bae}</Project>
-      <Name>UseCase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

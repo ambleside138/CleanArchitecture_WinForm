@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presentation.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentation
+namespace Presentation.Views
 {
-    public partial class Form1 : Form
+    public partial class MainView : Form
     {
-        public Form1()
+        private readonly MainPresenter _Presenter;
+
+        public MainView()
         {
             InitializeComponent();
+
+            _Presenter = new MainPresenter(this);
         }
     }
 }

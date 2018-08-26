@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Presentation.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SimpleInjector;
+using UseCase.Core.MessageBus;
+using UseCase.Articles.Create;
 
 namespace Presentation
 {
@@ -16,7 +20,10 @@ namespace Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            ContainerHelper.Setup();
+
+            Application.Run(new MainView());
         }
     }
 }

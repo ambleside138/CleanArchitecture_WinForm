@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace UseCase.Core
 {
-    public class Class1
+    /// <summary>
+    /// 戻り値を表すマーカIFです
+    /// </summary>
+    public interface IResponse
     {
     }
 }

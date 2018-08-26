@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B36CFEB-AE41-4DF4-99DD-6AE9ECEEBBA4}</ProjectGuid>
+    <ProjectGuid>{086BCB7E-252A-43C2-A751-255F72854A62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain</RootNamespace>
-    <AssemblyName>Domain</AssemblyName>
+    <RootNamespace>InMemoryDataStore</RootNamespace>
+    <AssemblyName>InMemoryDataStore</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,28 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\Articles\ArticleCreateInteractor.cs" />
-    <Compile Include="Application\Articles\ArticleGetDetailInteractor.cs" />
-    <Compile Include="Application\Articles\ArticleGetByAutherInteractor.cs" />
-    <Compile Include="Domain\Model\Articles\Article.cs" />
-    <Compile Include="Domain\Model\Articles\ArticleId.cs" />
-    <Compile Include="Domain\Model\Articles\ArticleToDtoTransformer.cs" />
-    <Compile Include="Domain\Model\Articles\IArticleDataTransformer.cs" />
-    <Compile Include="Domain\Model\Articles\IArticleRepository.cs" />
-    <Compile Include="Domain\Model\Users\IUserRepository.cs" />
-    <Compile Include="Domain\Model\Users\User.cs" />
-    <Compile Include="Domain\Model\Users\UserId.cs" />
+    <Compile Include="Articles\ArticleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\UseCase.Core\UseCase.Core.csproj">
-      <Project>{736d5cd7-a127-4d55-ac33-3f1d2a0b3550}</Project>
-      <Name>UseCase.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UseCase\UseCase.csproj">
-      <Project>{deb47e3b-b394-4a55-9243-ed18cfb60bae}</Project>
-      <Name>UseCase</Name>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{6b36cfeb-ae41-4df4-99dd-6ae9eceebba4}</Project>
+      <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
