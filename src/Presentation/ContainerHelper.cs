@@ -1,6 +1,5 @@
 ﻿using Domain.Application.Articles;
 using Domain.Domain.Model.Articles;
-using Presentation.Services;
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
@@ -26,9 +25,6 @@ namespace Presentation
 
             // Repository実装の定義
             container.RegisterSingleton<IArticleRepository, InMemoryDataStore.Articles.ArticleRepository>();
-
-            // Service実装の定義
-            container.RegisterSingleton<IArticleService, ArticleService>();
 
             // UserCase実装の定義
             var busBuilder = new UseCaseBusBuilder(container);
